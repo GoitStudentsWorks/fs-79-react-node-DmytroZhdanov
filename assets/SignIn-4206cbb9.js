@@ -1,4 +1,4 @@
-import{n,e as k,f as h,u as F,v as S,r as c,s as C,h as I,j as e,F as z,i as P,I as p,L as B,k as $,d as E}from"./index-ae7c9a9a.js";import{T as q}from"./TitlePage-63ec60fc.js";const D=n.p`
+import{n,e as k,f as h,u as F,v as S,r as c,s as C,h as I,j as e,F as z,i as P,I as p,L as B,k as $,d as E}from"./index-001bc5fc.js";import{T as q}from"./TitlePage-168bb9f5.js";const D=n.p`
   @media screen and (max-width: 374px) {
     width: calc(100% - 20px);
   }
