@@ -215,7 +215,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/power-pulse/',
+    basename: '/fs-79-react-node-DmytroZhdanov/',
   },
 );
 
