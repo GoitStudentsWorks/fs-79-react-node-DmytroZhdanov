@@ -11,5 +11,5 @@ export default defineConfig({
       pages: '/src/pages',
     },
   },
-  base: '/fs-79-react-node-dmytrozhdanov/',
+  base: '/fs-79-react-node-DmytroZhdanov/',
 });
