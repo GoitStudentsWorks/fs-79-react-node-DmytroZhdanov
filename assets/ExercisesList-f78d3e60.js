@@ -1,4 +1,4 @@
-import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as he,L as Z,R as ue,o as P,af as xe,ad as me,b as ge,ak as fe,ag as be,u as we,s as ye}from"./index-af028c78.js";import{u as ve}from"./index-26f0e202.js";import{f as ee,C as ke}from"./Calendar-d4d82e24.js";var G=typeof window>"u"?l.useEffect:l.useLayoutEffect,je=({isPlaying:e,duration:r,startAt:d=0,updateInterval:o=0,onComplete:n,onUpdate:a})=>{let[s,c]=l.useState(d),u=l.useRef(0),m=l.useRef(d),w=l.useRef(d*-1e3),p=l.useRef(null),x=l.useRef(null),g=l.useRef(null),f=k=>{let b=k/1e3;if(x.current===null){x.current=b,p.current=requestAnimationFrame(f);return}let y=b-x.current,$=u.current+y;x.current=b,u.current=$;let S=m.current+(o===0?$:($/o|0)*o),C=m.current+$,R=typeof r=="number"&&C>=r;c(R?r:S),R||(p.current=requestAnimationFrame(f))},v=()=>{p.current&&cancelAnimationFrame(p.current),g.current&&clearTimeout(g.current),x.current=null},j=l.useCallback(k=>{v(),u.current=0;let b=typeof k=="number"?k:d;m.current=b,c(b),e&&(p.current=requestAnimationFrame(f))},[e,d]);return G(()=>{if(a==null||a(s),r&&s>=r){w.current+=r*1e3;let{shouldRepeat:k=!1,delay:b=0,newStartAt:y}=(n==null?void 0:n(w.current/1e3))||{};k&&(g.current=setTimeout(()=>j(y),b*1e3))}},[s,r]),G(()=>(e&&(p.current=requestAnimationFrame(f)),v),[e,r,o]),{elapsedTime:s,reset:j}},$e=(e,r,d)=>{let o=e/2,n=r/2,a=o-n,s=2*a,c=d==="clockwise"?"1,0":"0,1",u=2*Math.PI*a;return{path:`m ${o},${n} a ${a},${a} 0 ${c} 0,${s} a ${a},${a} 0 ${c} 0,-${s}`,pathLength:u}},Y=(e,r)=>e===0||e===r?0:typeof r=="number"?e-r:0,Se=e=>({position:"relative",width:e,height:e}),Ee={display:"flex",justifyContent:"center",alignItems:"center",position:"absolute",left:0,top:0,width:"100%",height:"100%"},te=(e,r,d,o,n)=>{if(o===0)return r;let a=(n?o-e:e)/o;return r+d*a},H=e=>{var r,d;return(d=(r=e.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(o,n,a,s)=>`#${n}${n}${a}${a}${s}${s}`).substring(1).match(/.{2}/g))==null?void 0:r.map(o=>parseInt(o,16)))!=null?d:[]},Te=(e,r)=>{var d;let{colors:o,colorsTime:n,isSmoothColorTransition:a=!0}=e;if(typeof o=="string")return o;let s=(d=n==null?void 0:n.findIndex((x,g)=>x>=r&&r>=n[g+1]))!=null?d:-1;if(!n||s===-1)return o[0];if(!a)return o[s];let c=n[s]-r,u=n[s]-n[s+1],m=H(o[s]),w=H(o[s+1]),p=!!e.isGrowing;return`rgb(${m.map((x,g)=>te(c,x,w[g]-x,u,p)|0).join(",")})`},Re=e=>{let{duration:r,initialRemainingTime:d,updateInterval:o,size:n=180,strokeWidth:a=12,trailStrokeWidth:s,isPlaying:c=!1,isGrowing:u=!1,rotation:m="clockwise",onComplete:w,onUpdate:p}=e,x=l.useRef(),g=Math.max(a,s??0),{path:f,pathLength:v}=$e(n,g,m),{elapsedTime:j}=je({isPlaying:c,duration:r,startAt:Y(r,d),updateInterval:o,onUpdate:typeof p=="function"?b=>{let y=Math.ceil(r-b);y!==x.current&&(x.current=y,p(y))}:void 0,onComplete:typeof w=="function"?b=>{var y;let{shouldRepeat:$,delay:S,newInitialRemainingTime:C}=(y=w(b))!=null?y:{};if($)return{shouldRepeat:$,delay:S,newStartAt:Y(r,C)}}:void 0}),k=r-j;return{elapsedTime:j,path:f,pathLength:v,remainingTime:Math.ceil(k),rotation:m,size:n,stroke:Te(e,k),strokeDashoffset:te(j,0,v,r,u),strokeWidth:a}},ie=e=>{let{children:r,strokeLinecap:d,trailColor:o,trailStrokeWidth:n}=e,{path:a,pathLength:s,stroke:c,strokeDashoffset:u,remainingTime:m,elapsedTime:w,size:p,strokeWidth:x}=Re(e);return z.createElement("div",{style:Se(p)},z.createElement("svg",{viewBox:`0 0 ${p} ${p}`,width:p,height:p,xmlns:"http://www.w3.org/2000/svg"},z.createElement("path",{d:a,fill:"none",stroke:o??"#d9d9d9",strokeWidth:n??x}),z.createElement("path",{d:a,fill:"none",stroke:c,strokeLinecap:d??"round",strokeWidth:x,strokeDasharray:s,strokeDashoffset:u})),typeof r=="function"&&z.createElement("div",{style:Ee},r({remainingTime:m,elapsedTime:w,color:c})))};ie.displayName="CountdownCircleTimer";const Ce=i.div`
+import{Y as F,r as l,n as i,P as h,j as t,I as z,ai as de,aj as pe,M as q,N as he,L as J,R as ue,o as P,af as xe,ad as me,b as ge,ak as fe,ag as be,u as we,s as ye}from"./index-ae7c9a9a.js";import{u as ve}from"./index-2fb6ac4e.js";import{f as ee,C as ke}from"./Calendar-1a69f886.js";var G=typeof window>"u"?l.useEffect:l.useLayoutEffect,je=({isPlaying:e,duration:r,startAt:d=0,updateInterval:o=0,onComplete:n,onUpdate:a})=>{let[s,c]=l.useState(d),u=l.useRef(0),m=l.useRef(d),w=l.useRef(d*-1e3),p=l.useRef(null),x=l.useRef(null),g=l.useRef(null),f=k=>{let b=k/1e3;if(x.current===null){x.current=b,p.current=requestAnimationFrame(f);return}let y=b-x.current,$=u.current+y;x.current=b,u.current=$;let S=m.current+(o===0?$:($/o|0)*o),C=m.current+$,R=typeof r=="number"&&C>=r;c(R?r:S),R||(p.current=requestAnimationFrame(f))},v=()=>{p.current&&cancelAnimationFrame(p.current),g.current&&clearTimeout(g.current),x.current=null},j=l.useCallback(k=>{v(),u.current=0;let b=typeof k=="number"?k:d;m.current=b,c(b),e&&(p.current=requestAnimationFrame(f))},[e,d]);return G(()=>{if(a==null||a(s),r&&s>=r){w.current+=r*1e3;let{shouldRepeat:k=!1,delay:b=0,newStartAt:y}=(n==null?void 0:n(w.current/1e3))||{};k&&(g.current=setTimeout(()=>j(y),b*1e3))}},[s,r]),G(()=>(e&&(p.current=requestAnimationFrame(f)),v),[e,r,o]),{elapsedTime:s,reset:j}},$e=(e,r,d)=>{let o=e/2,n=r/2,a=o-n,s=2*a,c=d==="clockwise"?"1,0":"0,1",u=2*Math.PI*a;return{path:`m ${o},${n} a ${a},${a} 0 ${c} 0,${s} a ${a},${a} 0 ${c} 0,-${s}`,pathLength:u}},Y=(e,r)=>e===0||e===r?0:typeof r=="number"?e-r:0,Se=e=>({position:"relative",width:e,height:e}),Ee={display:"flex",justifyContent:"center",alignItems:"center",position:"absolute",left:0,top:0,width:"100%",height:"100%"},te=(e,r,d,o,n)=>{if(o===0)return r;let a=(n?o-e:e)/o;return r+d*a},H=e=>{var r,d;return(d=(r=e.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(o,n,a,s)=>`#${n}${n}${a}${a}${s}${s}`).substring(1).match(/.{2}/g))==null?void 0:r.map(o=>parseInt(o,16)))!=null?d:[]},Te=(e,r)=>{var d;let{colors:o,colorsTime:n,isSmoothColorTransition:a=!0}=e;if(typeof o=="string")return o;let s=(d=n==null?void 0:n.findIndex((x,g)=>x>=r&&r>=n[g+1]))!=null?d:-1;if(!n||s===-1)return o[0];if(!a)return o[s];let c=n[s]-r,u=n[s]-n[s+1],m=H(o[s]),w=H(o[s+1]),p=!!e.isGrowing;return`rgb(${m.map((x,g)=>te(c,x,w[g]-x,u,p)|0).join(",")})`},Re=e=>{let{duration:r,initialRemainingTime:d,updateInterval:o,size:n=180,strokeWidth:a=12,trailStrokeWidth:s,isPlaying:c=!1,isGrowing:u=!1,rotation:m="clockwise",onComplete:w,onUpdate:p}=e,x=l.useRef(),g=Math.max(a,s??0),{path:f,pathLength:v}=$e(n,g,m),{elapsedTime:j}=je({isPlaying:c,duration:r,startAt:Y(r,d),updateInterval:o,onUpdate:typeof p=="function"?b=>{let y=Math.ceil(r-b);y!==x.current&&(x.current=y,p(y))}:void 0,onComplete:typeof w=="function"?b=>{var y;let{shouldRepeat:$,delay:S,newInitialRemainingTime:C}=(y=w(b))!=null?y:{};if($)return{shouldRepeat:$,delay:S,newStartAt:Y(r,C)}}:void 0}),k=r-j;return{elapsedTime:j,path:f,pathLength:v,remainingTime:Math.ceil(k),rotation:m,size:n,stroke:Te(e,k),strokeDashoffset:te(j,0,v,r,u),strokeWidth:a}},ie=e=>{let{children:r,strokeLinecap:d,trailColor:o,trailStrokeWidth:n}=e,{path:a,pathLength:s,stroke:c,strokeDashoffset:u,remainingTime:m,elapsedTime:w,size:p,strokeWidth:x}=Re(e);return F.createElement("div",{style:Se(p)},F.createElement("svg",{viewBox:`0 0 ${p} ${p}`,width:p,height:p,xmlns:"http://www.w3.org/2000/svg"},F.createElement("path",{d:a,fill:"none",stroke:o??"#d9d9d9",strokeWidth:n??x}),F.createElement("path",{d:a,fill:"none",stroke:c,strokeLinecap:d??"round",strokeWidth:x,strokeDasharray:s,strokeDashoffset:u})),typeof r=="function"&&F.createElement("div",{style:Ee},r({remainingTime:m,elapsedTime:w,color:c})))};ie.displayName="CountdownCircleTimer";const Ce=i.div`
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -51,7 +51,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
   gap: 5px;
   position: relative;
   z-index: 100;
-`,ze=i.div`
+`,Fe=i.div`
   margin-bottom: 14px;
   position: relative;
 
@@ -65,7 +65,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
       opacity: 0.8;
     }
   }
-`,Fe=i.p`
+`,ze=i.p`
   margin-bottom: 4px;
   color: rgba(239, 237, 232, 0.4);
   font-size: 10px;
@@ -98,10 +98,10 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
   :hover {
     transform: scale(1.1);
   }
-`,ne=({timerLabel:e,duration:r,setTimer:d,roundsCount:o,setRoundsCount:n,stopTimer:a,setStopTimer:s})=>{const[c,u]=l.useState(!1);l.useEffect(()=>{a&&(u(!a),s(!1))},[s,a]);const m=()=>{u(!c)},w=({remainingTime:p})=>{const x=r-p,g=Math.floor(x/60),f=x%60;return t.jsxs(Me,{onClick:m,children:[t.jsx(Le,{className:"timer-display-icon",children:c?t.jsx(F,{name:"pause"}):t.jsx(F,{name:"play"})}),t.jsx(Q,{children:`
+`,ne=({timerLabel:e,duration:r,setTimer:d,roundsCount:o,setRoundsCount:n,stopTimer:a,setStopTimer:s})=>{const[c,u]=l.useState(!1);l.useEffect(()=>{a&&(u(!a),s(!1))},[s,a]);const m=()=>{u(!c)},w=({remainingTime:p})=>{const x=r-p,g=Math.floor(x/60),f=x%60;return t.jsxs(Me,{onClick:m,children:[t.jsx(Le,{className:"timer-display-icon",children:c?t.jsx(z,{name:"pause"}):t.jsx(z,{name:"play"})}),t.jsx(Q,{children:`
         ${g.toString().padStart(2,"0")} :
         ${f.toString().padStart(2,"0")}
-        `}),t.jsxs(Q,{children:["Round: ",o]})]})};return t.jsxs(t.Fragment,{children:[t.jsx(Fe,{children:e}),t.jsxs(ze,{children:[t.jsx(ie,{size:125,isPlaying:c,colors:"#E6533C",trailColor:"#262625",strokeLinecap:"round",strokeWidth:4,trailStrokeWidth:5,duration:r,isGrowing:!0,rotation:"counterclockwise",onComplete:()=>(n(p=>p+1),{shouldRepeat:!0}),onUpdate:p=>{d(r-p)},children:w}),t.jsx(re,{isRunning:c,animationDuration:r})]}),t.jsx(Ie,{onClick:m,children:c?t.jsx(F,{name:"pause"}):t.jsx(F,{name:"play"})})]})};ne.propTypes={timerLabel:h.string.isRequired,duration:h.number.isRequired,setTimer:h.func.isRequired,roundsCount:h.number.isRequired,setRoundsCount:h.func.isRequired,stopTimer:h.bool.isRequired,setStopTimer:h.func.isRequired};const qe=i.div`
+        `}),t.jsxs(Q,{children:["Round: ",o]})]})};return t.jsxs(t.Fragment,{children:[t.jsx(ze,{children:e}),t.jsxs(Fe,{children:[t.jsx(ie,{size:125,isPlaying:c,colors:"#E6533C",trailColor:"#262625",strokeLinecap:"round",strokeWidth:4,trailStrokeWidth:5,duration:r,isGrowing:!0,rotation:"counterclockwise",onComplete:()=>(n(p=>p+1),{shouldRepeat:!0}),onUpdate:p=>{d(r-p)},children:w}),t.jsx(re,{isRunning:c,animationDuration:r})]}),t.jsx(Ie,{onClick:m,children:c?t.jsx(z,{name:"pause"}):t.jsx(z,{name:"play"})})]})};ne.propTypes={timerLabel:h.string.isRequired,duration:h.number.isRequired,setTimer:h.func.isRequired,roundsCount:h.number.isRequired,setRoundsCount:h.func.isRequired,stopTimer:h.bool.isRequired,setStopTimer:h.func.isRequired};const qe=i.div`
   padding: 50px 45px 30px 45px;
   display: flex;
   gap: 35px;
@@ -236,7 +236,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
     padding: 14px 32px;
     line-height: 1.5;
   }
-`;function oe({onSubmit:e}){const[r,d]=l.useState(new Date),[o,n]=l.useState(""),[a,s]=l.useState(!1),c=l.useRef(null),u=l.useRef(null),m=g=>{const f=g.target.value;u.current&&clearTimeout(u.current),!(f.length>11)&&(/^[0-9]*$/.test(f)||f===""?(n(f),s(!1)):(s(!0),u.current&&clearTimeout(u.current),u.current=setTimeout(()=>{s(!1)},3e3)))};l.useEffect(()=>()=>{u.current&&clearTimeout(u.current)},[]);const w=g=>{d(g)},p=()=>{e({time:Number(o),date:r})},x=ee(r,"dd.MM.yyyy");return t.jsxs(qe,{children:[t.jsx("label",{children:t.jsxs(K,{children:[t.jsx(X,{children:"Add time"}),t.jsx(Pe,{placeholder:"min 60 sec.",type:"text",value:o,onChange:m}),t.jsx(Ae,{children:"sec."}),t.jsx(de,{in:a,nodeRef:c,timeout:300,classNames:"error-message",unmountOnExit:!0,children:t.jsx(Be,{ref:c,children:"Enter a number"})})]})}),t.jsxs(K,{children:[t.jsx(X,{children:"Choice day"}),t.jsx(ke,{maxDate:new Date,onChange:w,value:r,children:t.jsxs(We,{children:[t.jsx(Ne,{children:x}),t.jsx(Ue,{children:t.jsx(F,{name:"calendar"})})]})})]}),t.jsx("div",{children:t.jsx(Oe,{onClick:p,children:"Add to diary"})})]})}oe.propTypes={onSubmit:h.func.isRequired};const Ve=i.ul`
+`;function oe({onSubmit:e}){const[r,d]=l.useState(new Date),[o,n]=l.useState(""),[a,s]=l.useState(!1),c=l.useRef(null),u=l.useRef(null),m=g=>{const f=g.target.value;u.current&&clearTimeout(u.current),!(f.length>11)&&(/^[0-9]*$/.test(f)||f===""?(n(f),s(!1)):(s(!0),u.current&&clearTimeout(u.current),u.current=setTimeout(()=>{s(!1)},3e3)))};l.useEffect(()=>()=>{u.current&&clearTimeout(u.current)},[]);const w=g=>{d(g)},p=()=>{e({time:Number(o),date:r})},x=ee(r,"dd.MM.yyyy");return t.jsxs(qe,{children:[t.jsx("label",{children:t.jsxs(K,{children:[t.jsx(X,{children:"Add time"}),t.jsx(Pe,{placeholder:"min 60 sec.",type:"text",value:o,onChange:m}),t.jsx(Ae,{children:"sec."}),t.jsx(de,{in:a,nodeRef:c,timeout:300,classNames:"error-message",unmountOnExit:!0,children:t.jsx(Be,{ref:c,children:"Enter a number"})})]})}),t.jsxs(K,{children:[t.jsx(X,{children:"Choice day"}),t.jsx(ke,{maxDate:new Date,onChange:w,value:r,children:t.jsxs(We,{children:[t.jsx(Ne,{children:x}),t.jsx(Ue,{children:t.jsx(z,{name:"calendar"})})]})})]}),t.jsx("div",{children:t.jsx(Oe,{onClick:p,children:"Add to diary"})})]})}oe.propTypes={onSubmit:h.func.isRequired};const Ve=i.ul`
   margin-bottom: 24px;
   display: grid;
   gap: 8px;
@@ -326,7 +326,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
     justify-content: space-between;
     padding-bottom: 0px;
   }
-`,_e=i.img`
+`,Ze=i.img`
   object-fit: cover;
   margin-bottom: 14px;
   width: 230px;
@@ -343,10 +343,10 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
     width: 270px;
     height: 270px;
   }
-`,Je=i.div`
+`,_e=i.div`
   display: flex;
   gap: 8px;
-`,Ze=i.p`
+`,Je=i.p`
   color: ${({theme:e})=>e.color.grayFirst};
   font-size: 14px;
   line-height: 1.29;
@@ -415,7 +415,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
     color: ${({theme:e})=>e.color.hoverBorder};
     background: ${({theme:e})=>e.color.white};
   }
-`;function ae({exercise:e,openModalExerciseSuccess:r,closeModalExerciseForm:d,setModalExerciseSuccessData:o}){const{_id:n,gifUrl:a,burnedCalories:s,time:c}=e,[u,m]=l.useState(!1),[w,p]=l.useState(!1),[x,g]=l.useState(""),[f,v]=l.useState(""),[j,k]=l.useState(0),[b,y]=l.useState(0),[$,S]=l.useState(!1),[C]=pe(),R=s/c,E=Math.floor(j/60*R+b*s),T=j+b*c*60,L=async({time:I=T,date:A=new Date})=>{S(!0);const W=Math.floor(I/60*R+b*s),D={exercise_ID:n,date:ee(A,"yyyy-MM-dd"),time:I,calories:W};if(D.time<60){g(`To achieve results, the training time should be more than one minute. Your time ${D.time} sec.`),v("Notice: "),p(!0);return}const{error:V}=await C(D);V?(v("Error: "),g(V.data.message),p(!0)):(r(),d(),o(D))},B=()=>{S(!0),m(!0)},M={timerLabel:"Time",caloriesLabel:"Burned calories:",addExerciseBtnName:"Add to diary",openPastDaysFormBtnName:"Missing exercises? Add them here"};return t.jsxs(Qe,{children:[t.jsxs(Ke,{children:[t.jsx(_e,{src:a,alt:"Exercise technique"}),t.jsx(ne,{timerLabel:M.timerLabel,stopTimer:$,setStopTimer:S,roundsCount:b,setRoundsCount:y,setTimer:k,duration:c*60}),t.jsxs(Je,{children:[t.jsx(Ze,{children:M.caloriesLabel}),t.jsx(et,{children:E})]})]}),t.jsxs(Xe,{children:[t.jsx(se,{exercise:e}),t.jsxs(tt,{children:[t.jsx(it,{onClick:B,children:M.openPastDaysFormBtnName}),t.jsx(rt,{onClick:L,children:M.addExerciseBtnName})]})]}),t.jsx(q,{onShow:u,onClose:()=>{m(!1)},children:t.jsx(oe,{onSubmit:L})}),t.jsx(q,{onShow:w,onClose:()=>{p(!1)},children:t.jsx(he,{notificationType:f,message:x})})]})}ae.propTypes={openModalExerciseSuccess:h.func.isRequired,closeModalExerciseForm:h.func.isRequired,setModalExerciseSuccessData:h.func.isRequired,exercise:h.shape({gifUrl:h.string.isRequired,burnedCalories:h.number.isRequired,time:h.number.isRequired}).isRequired};const nt=i.div`
+`;function ae({exercise:e,openModalExerciseSuccess:r,closeModalExerciseForm:d,setModalExerciseSuccessData:o}){const{_id:n,gifUrl:a,burnedCalories:s,time:c}=e,[u,m]=l.useState(!1),[w,p]=l.useState(!1),[x,g]=l.useState(""),[f,v]=l.useState(""),[j,k]=l.useState(0),[b,y]=l.useState(0),[$,S]=l.useState(!1),[C]=pe(),R=s/c,E=Math.floor(j/60*R+b*s),T=j+b*c*60,L=async({time:I=T,date:A=new Date})=>{S(!0);const W=Math.floor(I/60*R+b*s),D={exercise_ID:n,date:ee(A,"yyyy-MM-dd"),time:I,calories:W};if(D.time<60){g(`To achieve results, the training time should be more than one minute. Your time ${D.time} sec.`),v("Notice: "),p(!0);return}const{error:V}=await C(D);V?(v("Error: "),g(V.data.message),p(!0)):(r(),d(),o(D))},B=()=>{S(!0),m(!0)},M={timerLabel:"Time",caloriesLabel:"Burned calories:",addExerciseBtnName:"Add to diary",openPastDaysFormBtnName:"Missing exercises? Add them here"};return t.jsxs(Qe,{children:[t.jsxs(Ke,{children:[t.jsx(Ze,{src:a,alt:"Exercise technique"}),t.jsx(ne,{timerLabel:M.timerLabel,stopTimer:$,setStopTimer:S,roundsCount:b,setRoundsCount:y,setTimer:k,duration:c*60}),t.jsxs(_e,{children:[t.jsx(Je,{children:M.caloriesLabel}),t.jsx(et,{children:E})]})]}),t.jsxs(Xe,{children:[t.jsx(se,{exercise:e}),t.jsxs(tt,{children:[t.jsx(it,{onClick:B,children:M.openPastDaysFormBtnName}),t.jsx(rt,{onClick:L,children:M.addExerciseBtnName})]})]}),t.jsx(q,{onShow:u,onClose:()=>{m(!1)},children:t.jsx(oe,{onSubmit:L})}),t.jsx(q,{onShow:w,onClose:()=>{p(!1)},children:t.jsx(he,{notificationType:f,message:x})})]})}ae.propTypes={openModalExerciseSuccess:h.func.isRequired,closeModalExerciseForm:h.func.isRequired,setModalExerciseSuccessData:h.func.isRequired,exercise:h.shape({gifUrl:h.string.isRequired,burnedCalories:h.number.isRequired,time:h.number.isRequired}).isRequired};const nt=i.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -460,10 +460,10 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
   align-items: center;
   gap: 4px;
   margin-bottom: 24px;
-`,_=i.span`
+`,Z=i.span`
   margin-right: 8px;
   color: ${({theme:e})=>e.color.grayFirst};
-`,J=i.span`
+`,_=i.span`
   color: ${({theme:e})=>e.color.orangeFirst};
 `,lt=i.button`
   margin-bottom: 16px;
@@ -488,7 +488,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
     padding-bottom: 14px;
     line-height: 1.5;
   }
-`,ct=i(Z)`
+`,ct=i(J)`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -508,7 +508,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
   height: 16px;
   stroke: ${({theme:e})=>e.color.grayFirst};
   transition: stroke 300ms ease-in-out;
-`,pt="/fs-79-react-node-dmytrozhdanov/assets/thumb-up-bc557cec.webp";function le({closeModalExerciseSuccess:e,modalExerciseSuccessData:r}){const{time:d=0,calories:o=0}=r,n={wellDone:"Well done",timeText:"Your time:",caloriesText:"Burned calories:",nextExerciseText:"Next exercise",diaryLinkText:"To the diary"};return t.jsxs(nt,{children:[t.jsx(ot,{src:pt,alt:"thumb up"}),t.jsx(st,{children:n.wellDone}),t.jsxs(at,{children:[t.jsxs(N,{children:[t.jsx(_,{children:n.timeText}),t.jsxs(J,{children:[" ",d]})]}),t.jsxs(N,{children:[t.jsx(_,{children:n.caloriesText}),t.jsx(J,{children:o})]})]}),t.jsx(lt,{onClick:e,type:"button",children:n.nextExerciseText}),t.jsxs(ct,{to:`/${ue.DIARY}`,children:[t.jsxs(N,{children:[" ",n.diaryLinkText]}),t.jsx(dt,{children:t.jsx("use",{href:`${P}#arrow-add-prod`})})]})]})}le.propTypes={closeModalExerciseSuccess:h.func.isRequired,modalExerciseSuccessData:h.shape({time:h.number,calories:h.number})};const ht=i.div`
+`,pt="/fs-79-react-node-DmytroZhdanov/assets/thumb-up-bc557cec.webp";function le({closeModalExerciseSuccess:e,modalExerciseSuccessData:r}){const{time:d=0,calories:o=0}=r,n={wellDone:"Well done",timeText:"Your time:",caloriesText:"Burned calories:",nextExerciseText:"Next exercise",diaryLinkText:"To the diary"};return t.jsxs(nt,{children:[t.jsx(ot,{src:pt,alt:"thumb up"}),t.jsx(st,{children:n.wellDone}),t.jsxs(at,{children:[t.jsxs(N,{children:[t.jsx(Z,{children:n.timeText}),t.jsxs(_,{children:[" ",d]})]}),t.jsxs(N,{children:[t.jsx(Z,{children:n.caloriesText}),t.jsx(_,{children:o})]})]}),t.jsx(lt,{onClick:e,type:"button",children:n.nextExerciseText}),t.jsxs(ct,{to:`/${ue.DIARY}`,children:[t.jsxs(N,{children:[" ",n.diaryLinkText]}),t.jsx(dt,{children:t.jsx("use",{href:`${P}#arrow-add-prod`})})]})]})}le.propTypes={closeModalExerciseSuccess:h.func.isRequired,modalExerciseSuccessData:h.shape({time:h.number,calories:h.number})};const ht=i.div`
   padding: 16px;
   border-radius: 12px;
   border: 1px solid ${({theme:e})=>e.color.grayDisabled};
@@ -718,7 +718,7 @@ import{Y as z,r as l,n as i,P as h,j as t,I as F,ai as de,aj as pe,M as q,N as h
   @media screen and (min-width: ${({theme:e})=>e.breakpoint.tablet}) {
     line-height: calc(24 / 16);
   }
-`,St=i(Z)`
+`,St=i(J)`
   display: flex;
   align-items: center;
   gap: 8px;
